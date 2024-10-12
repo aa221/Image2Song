@@ -22,11 +22,8 @@ def image_to_emotion(image_path):
     response = requests.get(image_path)
     prompt = 'Assign a probability for each of these emotions based on what the image evokes, be very detailed and accurate, if you are unsure about a specific emotion set it to 0: aggressive, calm , chilled, dark, energetic, epic, happy, romantic, sad, scary, sexy, ethereal, uplifting. Only include their respective values.'
     image = response.content
-    print("quick")
     image = base64.b64encode(image).decode('utf-8')
-    print("not")
     image = 'data:image/jpeg;base64,'+image
-    print("tit")
 
 
     output = replicate.run(
